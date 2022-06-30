@@ -9,18 +9,18 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class AnnotationSteps {
 
-    @Step("Открываем главную страницу GitHub")
+    @Step("РћС‚РєСЂС‹РІР°РµРј РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ GitHub")
     public void openPage() {
         open("http://github.com");
     }
 
-    @Step("Поиск репозитория")
+    @Step("РџРѕРёСЃРє СЂРµРїРѕР·РёС‚РѕСЂРёСЏ")
     public void searchForRepository(String repository) {
         $("[placeholder='Search GitHub']").setValue(repository).pressEnter();
         $(By.linkText("allure-framework/allure-java")).click();
     }
 
-    @Step("Проверка наличия конкретного раздела в Issue")
+    @Step("РџРѕРёСЃРє РѕРїСЂРµРґРµР»РµРЅРЅРѕРіРѕ СЂР°Р·РґРµР»Р° РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё РІ РІРєР»Р°РґРєРµ Issue")
     public void searchText(String text) {
         $("#issues-tab").click();
         $("#js-repo-pjax-container")

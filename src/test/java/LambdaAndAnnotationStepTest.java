@@ -20,18 +20,18 @@ public class LambdaAndAnnotationStepTest {
     AnnotationSteps steps = new AnnotationSteps();
 
     @Test
-    @DisplayName("Ïðîâåðÿåì íàëè÷èå èñêîìîãî ðàçäåëà â Issue")
+    @DisplayName("ÐŸÑ€Ð¾Ð²ÐµÑ€ÐºÐ° Ð½Ð°Ð»Ð¸Ñ‡Ð¸Ñ ÐºÐ¾Ð½ÐºÑ€ÐµÑ‚Ð½Ð¾Ð³Ð¾ Ñ€Ð°Ð·Ð´ÐµÐ»Ð° Ð² Issue")
     public void selenideAndListenerTest() {
         //SelenideLogger.addListener("allure", new AllureSelenide());
 
-        step("Îòêðûâàåì ãëàâíóþ ñòðàíèöó", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð³Ð»Ð°Ð²Ð½ÑƒÑŽ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ GitHub", () -> {
             Selenide.open("http://github.com");
         });
-        step("Èùåì ðåïîçèòîðèé allure-java ïî çàïðîñó" + REPOSITORY, () -> {
+        step("Ð˜Ñ‰ÐµÐ¼ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹ allure-java Ð¿Ð¾ Ð·Ð°Ð¿Ñ€Ð¾ÑÑƒ " + REPOSITORY, () -> {
             $("[placeholder='Search GitHub']").setValue(REPOSITORY).pressEnter();
             $(By.linkText("allure-framework/allure-java")).click();
         });
-        step("Èùåì '" + SearchText + "' ïî çàïðîñó â ðàçäåëå Issue", () -> {
+        step("Ð˜Ñ‰ÐµÐ¼ '" + SearchText + "' Ð¿Ð¾ Ð·Ð°Ð¿Ñ€Ð¾ÑÑƒ Ð² Ñ€Ð°Ð·Ð´ÐµÐ»Ðµ Issue", () -> {
             $("#issues-tab").click();
             $("#js-repo-pjax-container")
                     .shouldHave(text(SearchText))
